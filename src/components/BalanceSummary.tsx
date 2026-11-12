@@ -1,6 +1,7 @@
 import React from "react";
 import { formatBohr, shortenAddress } from "@/utils/format";
 import { ArrowUpRight, ArrowDownLeft, CheckCircle2, User } from "lucide-react";
+import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
 interface BalanceItem {
   address: string;
@@ -110,12 +111,12 @@ export function BalanceSummary({
 
                   {/* Total Paid */}
                   <td className="px-6 py-4 font-mono font-medium text-gray-200">
-                    {formatBohr(item.paid)} BOHR
+                    {formatBohr(item.paid)} {BOTCHAIN_CURRENCY_SYMBOL}
                   </td>
 
                   {/* Share Owed */}
                   <td className="px-6 py-4 font-mono font-medium text-gray-200">
-                    {formatBohr(item.owed)} BOHR
+                    {formatBohr(item.owed)} {BOTCHAIN_CURRENCY_SYMBOL}
                   </td>
 
                   {/* Net Balance */}
@@ -123,18 +124,18 @@ export function BalanceSummary({
                     {isPositive && (
                       <span className="text-brand-green flex items-center gap-1">
                         <ArrowUpRight className="w-3.5 h-3.5" />
-                        +{formatBohr(absNet)} BOHR
+                        +{formatBohr(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
                       </span>
                     )}
                     {isNegative && (
                       <span className="text-rose-400 flex items-center gap-1">
                         <ArrowDownLeft className="w-3.5 h-3.5" />
-                        -{formatBohr(absNet)} BOHR
+                        -{formatBohr(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
                       </span>
                     )}
                     {isZero && (
                       <span className="text-gray-400 flex items-center gap-1">
-                        0.00 BOHR
+                        0.00 {BOTCHAIN_CURRENCY_SYMBOL}
                       </span>
                     )}
                   </td>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Web3Provider } from "@/providers/Web3Provider";
 import { Navbar } from "@/components/Navbar";
+import { BOTCHAIN_NETWORK_NAME, BOTCHAIN_CHAIN_ID } from "@/config/network";
 
 export const metadata: Metadata = {
   title: "QueueTab | On-Chain Group Expense Tracker",
@@ -30,7 +31,7 @@ export default function RootLayout({
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-gray-300">QueueTab</span>
                 <span>•</span>
-                <span>Botchain Testnet (Chain ID 968)</span>
+                <span>{BOTCHAIN_NETWORK_NAME} (Chain ID {BOTCHAIN_CHAIN_ID})</span>
               </div>
               <p className="text-[11px] text-gray-400">
                 Non-custodial expense ledger. No funds are held, managed, or transferred.

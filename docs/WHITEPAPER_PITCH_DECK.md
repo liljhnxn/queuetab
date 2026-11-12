@@ -2,8 +2,8 @@
 **Decentralized Group Expense Ledger on Botchain**
 
 * **Live dApp:** [http://localhost:3000](http://localhost:3000) (Local) / [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
-* **Contract Address (Botchain Testnet):** [`0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F`](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
-* **Chain ID:** `968` | **Currency:** `BOHR`
+* **Contract Address (Botchain Mainnet):** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
+* **Chain ID:** `677` | **Currency:** `BOT`
 
 ---
 
@@ -165,3 +165,4 @@ SLIDE 10: CALL TO ACTION
 * **GitHub Repository:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
 * **Verified Contract Code:** [https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
 * **Pitch Deck & Whitepaper Document:** Saved locally at `docs/WHITEPAPER_PITCH_DECK.md`
+

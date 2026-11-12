@@ -1,17 +1,18 @@
 import { defineChain } from "viem";
 
-export const BOTCHAIN_CHAIN_ID = 968;
-export const BOTCHAIN_RPC_URL = process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.bohr.life";
-export const BOTCHAIN_EXPLORER_URL = process.env.NEXT_PUBLIC_BLOCK_EXPLORER_URL || "https://scan.bohr.life";
-export const BOTCHAIN_CURRENCY_SYMBOL = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || "BOHR";
+export const BOTCHAIN_CHAIN_ID = Number(process.env.NEXT_PUBLIC_CHAIN_ID || "677");
+export const BOTCHAIN_RPC_URL = process.env.NEXT_PUBLIC_RPC_URL || "https://rpc.botchain.ai";
+export const BOTCHAIN_EXPLORER_URL = process.env.NEXT_PUBLIC_BLOCK_EXPLORER_URL || "https://scan.botchain.ai";
+export const BOTCHAIN_CURRENCY_SYMBOL = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || "BOT";
+export const BOTCHAIN_NETWORK_NAME = BOTCHAIN_CHAIN_ID === 677 ? "Botchain Mainnet" : "Botchain Testnet";
 
-export const botchainTestnet = defineChain({
+export const botchain = defineChain({
   id: BOTCHAIN_CHAIN_ID,
-  name: "Botchain Testnet",
+  name: BOTCHAIN_NETWORK_NAME,
   nativeCurrency: {
     decimals: 18,
-    name: "BOHR",
-    symbol: "BOHR",
+    name: BOTCHAIN_CURRENCY_SYMBOL,
+    symbol: BOTCHAIN_CURRENCY_SYMBOL,
   },
   rpcUrls: {
     default: {
@@ -27,6 +28,8 @@ export const botchainTestnet = defineChain({
       url: BOTCHAIN_EXPLORER_URL,
     },
   },
-  testnet: true,
+  testnet: BOTCHAIN_CHAIN_ID !== 677,
 });
 
+// Backward compatibility alias
+export const botchainTestnet = botchain;

@@ -6,6 +6,7 @@ import { parseEther } from "viem";
 import { QUEUETAB_ABI } from "@/config/abi";
 import { QUEUETAB_CONTRACT_ADDRESS } from "@/config/contract";
 import { X, Loader2, Receipt, AlertCircle, Info } from "lucide-react";
+import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
 interface RecordExpenseModalProps {
   groupId: bigint;
@@ -164,7 +165,7 @@ export function RecordExpenseModal({
 
           <div>
             <label className="block text-xs font-medium text-gray-300 mb-1.5">
-              Amount (BOHR) <span className="text-brand-purple">*</span>
+              Amount ({BOTCHAIN_CURRENCY_SYMBOL}) <span className="text-brand-purple">*</span>
             </label>
             <div className="relative">
               <input
@@ -181,7 +182,7 @@ export function RecordExpenseModal({
                 className="w-full px-3.5 py-2.5 rounded-xl bg-charcoal-900 border border-charcoal-700 focus:border-brand-purple focus:outline-none text-sm font-mono text-gray-100 placeholder:text-gray-500 disabled:opacity-50 pr-16"
               />
               <span className="absolute right-3.5 top-2.5 text-xs font-mono font-medium text-gray-400 pointer-events-none">
-                BOHR
+                {BOTCHAIN_CURRENCY_SYMBOL}
               </span>
             </div>
           </div>
@@ -192,7 +193,7 @@ export function RecordExpenseModal({
               <div className="flex items-center justify-between text-gray-300 mb-1">
                 <span>Split among {memberCount} {memberCount === 1 ? "member" : "members"}:</span>
                 <span className="font-mono font-semibold text-brand-green">
-                  ~{splitEstimate} BOHR / member
+                  ~{splitEstimate} {BOTCHAIN_CURRENCY_SYMBOL} / member
                 </span>
               </div>
               <p className="text-[11px] text-gray-400">

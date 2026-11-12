@@ -6,6 +6,7 @@ import { useAccount, useReadContract } from "wagmi";
 import { QUEUETAB_ABI } from "@/config/abi";
 import { QUEUETAB_CONTRACT_ADDRESS } from "@/config/contract";
 import { formatBohr, formatDateTime, shortenAddress } from "@/utils/format";
+import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 import { BalanceSummary } from "@/components/BalanceSummary";
 import { ExpenseList, ExpenseRecord } from "@/components/ExpenseList";
 import { RecordExpenseModal } from "@/components/RecordExpenseModal";
@@ -311,7 +312,7 @@ export default function GroupDetailsPage({
             </div>
           </div>
           <div className="text-2xl font-bold font-mono text-gray-100">
-            {formatBohr(group.totalSpending)} BOHR
+            {formatBohr(group.totalSpending)} {BOTCHAIN_CURRENCY_SYMBOL}
           </div>
           <p className="text-[11px] text-gray-400 mt-1">Sum of all recorded expenses</p>
         </div>

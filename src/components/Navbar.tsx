@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { shortenAddress } from "@/utils/format";
-import { BOTCHAIN_CHAIN_ID } from "@/config/network";
+import { BOTCHAIN_CHAIN_ID, BOTCHAIN_NETWORK_NAME } from "@/config/network";
 import { Wallet, LogOut, AlertTriangle, Layers, ChevronDown } from "lucide-react";
 
 export function Navbar() {
@@ -40,7 +40,7 @@ export function Navbar() {
                 QueueTab
               </span>
               <span className="px-1.5 py-0.5 text-[10px] font-medium tracking-wide uppercase rounded bg-charcoal-700 text-gray-400 border border-charcoal-600">
-                Testnet
+                {BOTCHAIN_CHAIN_ID === 677 ? "Mainnet" : "Testnet"}
               </span>
             </div>
             <p className="text-[11px] text-gray-400 hidden sm:block">
@@ -67,7 +67,7 @@ export function Navbar() {
           {isConnected && !isWrongNetwork && (
             <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-800/80 border border-charcoal-700/80 text-xs text-gray-300">
               <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-              <span>Botchain Testnet (968)</span>
+              <span>{BOTCHAIN_NETWORK_NAME} ({BOTCHAIN_CHAIN_ID})</span>
             </div>
           )}
 

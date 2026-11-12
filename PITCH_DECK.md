@@ -1,8 +1,8 @@
 # QueueTab Pitch Deck
 
 **Decentralized Shared Expense Ledger on Botchain**
-* **Network:** Botchain Testnet (Chain ID: `968`, BOHR)
-* **Contract:** [`0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F`](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
+* **Network:** Botchain Mainnet (Chain ID: `677`, BOT)
+* **Contract:** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
 * **Website / Repo:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
 
 ---
@@ -82,6 +82,7 @@
 ---
 
 ## Slide 10: Call to Action / Contact
-* **Explore Contract:** [https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F)
+* **Explore Contract:** [https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB)
 * **GitHub Repository:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
 * **Local dApp:** Run `npm run dev` to launch locally at `http://localhost:3000`.
+

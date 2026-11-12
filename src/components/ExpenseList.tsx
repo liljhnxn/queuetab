@@ -1,6 +1,7 @@
 import React from "react";
 import { formatBohr, formatDateTime, shortenAddress } from "@/utils/format";
 import { Receipt, Calendar, Users, User } from "lucide-react";
+import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
 export interface ExpenseRecord {
   id: bigint;
@@ -88,7 +89,7 @@ export function ExpenseList({ expenses, currentUser }: ExpenseListProps) {
               <div className="sm:text-right border-t sm:border-t-0 pt-2 sm:pt-0 border-charcoal-700/50 flex sm:flex-col justify-between items-baseline sm:items-end">
                 <div>
                   <div className="text-sm sm:text-base font-bold font-mono text-gray-100">
-                    {formatBohr(exp.amount)} BOHR
+                    {formatBohr(exp.amount)} {BOTCHAIN_CURRENCY_SYMBOL}
                   </div>
                   <div className="flex items-center gap-1 text-[11px] text-brand-green font-mono">
                     <Users className="w-3 h-3" />

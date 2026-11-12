@@ -1,9 +1,9 @@
 # QueueTab Whitepaper
 **A Non-Custodial, Decentralized Group Expense Tracking Protocol on Botchain**
 
-* **Network:** Botchain Testnet (Chain ID: `968`, Currency: `BOHR`)
-* **RPC URL:** `https://rpc.bohr.life`
-* **Verified Contract:** [`0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F`](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
+* **Network:** Botchain Mainnet (Chain ID: `677`, Currency: `BOT`)
+* **RPC URL:** `https://rpc.botchain.ai`
+* **Verified Contract:** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
 * **GitHub Repository:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
 
 ---
@@ -92,3 +92,4 @@ The core contract [`QueueTab.sol`](file:///contracts/QueueTab.sol) is compiled w
 * **Phase 1 (Complete):** Core contract development, Botchain Testnet deployment, contract verification, responsive Next.js 14 frontend.
 * **Phase 2:** Expense category tagging (Dining, Housing, Travel, Operations) and CSV export.
 * **Phase 3:** Optional wallet-to-wallet P2P settlement links and multi-currency conversion views.
+
