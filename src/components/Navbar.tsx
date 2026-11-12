@@ -8,6 +8,7 @@ import {
   BOTCHAIN_CHAIN_ID,
   BOTCHAIN_NETWORK_NAME,
   BOTCHAIN_EXPLORER_URL,
+  BOTCHAIN_WEBSITE_URL,
 } from "@/config/network";
 import {
   Wallet,
@@ -75,17 +76,40 @@ export function Navbar() {
             </button>
           )}
 
-          {/* Mainnet Explorer Link & Indicator */}
+          {/* BOT Chain Website Link */}
+          <a
+            href={BOTCHAIN_WEBSITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open BOT Chain Official Website"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800/80 hover:bg-charcoal-700/80 border border-charcoal-700/80 text-xs text-gray-300 hover:text-white transition-colors"
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-4 h-4 rounded-sm object-contain"
+            />
+            <span>BOT Chain</span>
+            <ExternalLink className="w-3 h-3 text-gray-400" />
+          </a>
+
+          {/* Mainnet Explorer Link */}
           <a
             href={BOTCHAIN_EXPLORER_URL}
             target="_blank"
             rel="noopener noreferrer"
             title="Open BOT Chain Mainnet Explorer"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800/80 hover:bg-charcoal-700/80 border border-charcoal-700/80 text-xs text-gray-300 hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800/80 hover:bg-charcoal-700/80 border border-charcoal-700/80 text-xs text-gray-300 hover:text-white transition-colors"
           >
-            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-            <span className="hidden sm:inline">BOT Chain Explorer</span>
-            <span className="sm:hidden">Explorer</span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/botchain-logo.png"
+              alt="BOT Chain Logo"
+              className="w-4 h-4 rounded-sm object-contain"
+            />
+            <span className="hidden md:inline">BOT Chain Explorer</span>
+            <span className="md:hidden">Explorer</span>
             <ExternalLink className="w-3 h-3 text-gray-400" />
           </a>
 
@@ -120,7 +144,15 @@ export function Navbar() {
                     rel="noopener noreferrer"
                     className="flex items-center justify-between px-3.5 py-2 text-gray-300 hover:bg-charcoal-700/50 hover:text-white transition-colors text-xs"
                   >
-                    <span>View on BOT Explorer</span>
+                    <div className="flex items-center gap-2">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src="/botchain-logo.png"
+                        alt="BOT Chain Logo"
+                        className="w-3.5 h-3.5 rounded-sm object-contain"
+                      />
+                      <span>View on BOT Explorer</span>
+                    </div>
                     <ExternalLink className="w-3 h-3 text-gray-500" />
                   </a>
                   <button

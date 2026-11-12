@@ -62,8 +62,13 @@ export default function RootLayout({
 
                 {/* BOT Chain Ecosystem Links */}
                 <div className="flex flex-wrap items-center gap-4 text-xs">
-                  <div className="flex items-center gap-1.5 font-medium text-gray-300 mr-1">
-                    <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+                  <div className="flex items-center gap-2 font-medium text-gray-200 mr-1">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/botchain-logo.png"
+                      alt="BOT Chain Logo"
+                      className="w-5 h-5 rounded-md object-contain shadow-sm"
+                    />
                     <span>BOT Chain Ecosystem:</span>
                   </div>
 
@@ -71,10 +76,15 @@ export default function RootLayout({
                     href={BOTCHAIN_WEBSITE_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800 hover:bg-charcoal-700 text-gray-300 hover:text-white border border-charcoal-700 transition-colors"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-charcoal-800 hover:bg-charcoal-700 text-gray-200 hover:text-white border border-charcoal-700 transition-colors shadow-sm"
                   >
-                    <Globe className="w-3.5 h-3.5 text-brand-purple-light" />
-                    <span>BOT Chain Website</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/botchain-logo.png"
+                      alt="BOT Chain Logo"
+                      className="w-4 h-4 rounded-sm object-contain"
+                    />
+                    <span className="font-medium">BOT Chain Website</span>
                     <ExternalLink className="w-3 h-3 text-gray-500" />
                   </a>
 
@@ -82,10 +92,15 @@ export default function RootLayout({
                     href={BOTCHAIN_EXPLORER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800 hover:bg-charcoal-700 text-gray-300 hover:text-white border border-charcoal-700 transition-colors"
+                    className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-charcoal-800 hover:bg-charcoal-700 text-gray-200 hover:text-white border border-charcoal-700 transition-colors shadow-sm"
                   >
-                    <Search className="w-3.5 h-3.5 text-brand-green" />
-                    <span>BOT Chain Explorer</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/botchain-logo.png"
+                      alt="BOT Chain Logo"
+                      className="w-4 h-4 rounded-sm object-contain"
+                    />
+                    <span className="font-medium">BOT Chain Explorer</span>
                     <ExternalLink className="w-3 h-3 text-gray-500" />
                   </a>
 
