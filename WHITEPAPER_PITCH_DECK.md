@@ -2,15 +2,17 @@
 **Decentralized Group Expense Ledger on Botchain**
 
 * **Live dApp:** [http://localhost:3000](http://localhost:3000) (Local) / [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
-* **Contract Address (Botchain Testnet):** [`0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F`](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
-* **Chain ID:** `968` | **Currency:** `BOHR`
+* **Contract Address (BOT Chain Mainnet):** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
+* **Chain ID:** `677` | **Currency:** `BOT`
+* **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
 
 ---
 
 # SECTION 1: WHITEPAPER
 
 ## 1. Executive Summary
-**QueueTab** is an on-chain, non-custodial shared expense tracking protocol deployed on the Botchain Testnet. Unlike traditional Web2 expense-sharing platforms (e.g., Splitwise) that operate as closed corporate databases monetized through intrusive paywalls and ads, or custodial Web3 applications that require risky smart contract fund deposits, QueueTab functions as a pure, immutable accounting ledger. 
+**QueueTab** is an on-chain, non-custodial shared expense tracking protocol deployed on the BOT Chain Mainnet. Unlike traditional Web2 expense-sharing platforms (e.g., Splitwise) that operate as closed corporate databases monetized through intrusive paywalls and ads, or custodial Web3 applications that require risky smart contract fund deposits, QueueTab functions as a pure, immutable accounting ledger. 
 
 QueueTab provides decentralized groups—such as roommates, travel companions, DAO working groups, and event organizers—with automated equal splits, integer-safe division math, transparent net liability calculation, and cryptographic verifiability without handling or custodying user funds.
 
@@ -70,10 +72,10 @@ When member $m_p \in M$ records an expense of amount $A > 0$:
 |           (wagmi v2 / viem / Tailwind CSS / React 18)       |
 +-------------------------------------------------------------+
                               |
-                     RPC: https://rpc.bohr.life
+                     RPC: https://rpc.botchain.ai
                               |
 +-------------------------------------------------------------+
-|                Botchain Testnet (Chain ID: 968)             |
+|                BOT Chain Mainnet (Chain ID: 677)            |
 |                                                             |
 |   +-----------------------------------------------------+   |
 |   |                  QueueTab.sol                       |   |
@@ -100,7 +102,9 @@ When member $m_p \in M$ records an expense of amount $A > 0$:
 SLIDE 1: TITLE SLIDE
 QueueTab: The Decentralized Shared Expense Ledger
 Subtitle: Transparent, Zero-Custody Group Expense Tracking for the Web3 Era
-Ecosystem: Botchain Testnet
+Ecosystem: BOT Chain Mainnet
+BOT Chain Website: https://botchain.ai
+BOT Chain Explorer: https://scan.botchain.ai
 Presenter: QueueTab Core Team
 ================================================================================
 
@@ -119,7 +123,7 @@ SLIDE 3: THE SOLUTION
 SLIDE 4: PRODUCT DEMO & SCREENSHOTS
 * Dashboard: Instant overview of groups, member counts, and total spending.
 * Group Page: Detailed member breakdown with Net Balance status badges (Creditor / Debtor / Settled).
-* Live Modals: Real-time split preview (e.g. "~1.5 BOHR / member") before signing transactions.
+* Live Modals: Real-time split preview (e.g. "~1.5 BOT / member") before signing transactions.
 
 ================================================================================
 SLIDE 5: UNDER THE HOOD (TECH STACK)
@@ -141,20 +145,22 @@ SLIDE 7: ECOSYSTEM FIT (WHY BOTCHAIN?)
 
 ================================================================================
 SLIDE 8: ROADMAP & FUTURE VISION
-* Phase 1 (Completed): Core protocol, Botchain Testnet deployment, contract verification, full dApp UI.
+* Phase 1 (Completed): Core protocol, BOT Chain Mainnet deployment, contract verification, full dApp UI.
 * Phase 2: Category tagging (Travel, Dining, Utilities), exportable CSV reports, and ENS/BNS name resolution.
 * Phase 3: Optional 1-click peer-to-peer settlement modules (direct wallet-to-wallet transfer prompts).
 
 ================================================================================
 SLIDE 9: TRACTION & METRICS
-* Contract: 0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F (Botchain Testnet)
+* Contract: 0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB (BOT Chain Mainnet)
 * Source Code: 100% open source on GitHub.
 * Production Readiness: Next.js production build compiled with 0 errors.
 
 ================================================================================
 SLIDE 10: CALL TO ACTION
-* Try the dApp: Run locally or test on Botchain Testnet.
-* Explore the Contract: https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F
+* Try the dApp: Run locally or explore on BOT Chain Mainnet.
+* Explore the Contract: https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB
+* BOT Chain Official Website: https://botchain.ai
+* BOT Chain Block Explorer: https://scan.botchain.ai
 * Contact / GitHub: https://github.com/liljhnxn/queuetab
 ================================================================================
 ```
@@ -162,7 +168,8 @@ SLIDE 10: CALL TO ACTION
 ---
 
 ## Cloud Storage / Shareable Links
+* **BOT Chain Official Website:** [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Block Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
 * **GitHub Repository:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
-* **Verified Contract Code:** [https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code](https://scan.bohr.life/address/0x11F0528d8E7dc0b094F01eC693a1F22CF296D56F#code)
+* **Verified Contract Code:** [https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
 * **Pitch Deck & Whitepaper Document:** Saved locally at `docs/WHITEPAPER_PITCH_DECK.md`
-

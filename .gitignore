@@ -6,6 +6,7 @@ node_modules/
 # Hardhat
 /artifacts
 /cache
+/.cache
 /typechain
 /typechain-types
 

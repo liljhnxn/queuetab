@@ -4,8 +4,19 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
 import { shortenAddress } from "@/utils/format";
-import { BOTCHAIN_CHAIN_ID, BOTCHAIN_NETWORK_NAME } from "@/config/network";
-import { Wallet, LogOut, AlertTriangle, Layers, ChevronDown } from "lucide-react";
+import {
+  BOTCHAIN_CHAIN_ID,
+  BOTCHAIN_NETWORK_NAME,
+  BOTCHAIN_EXPLORER_URL,
+} from "@/config/network";
+import {
+  Wallet,
+  LogOut,
+  AlertTriangle,
+  Layers,
+  ChevronDown,
+  ExternalLink,
+} from "lucide-react";
 
 export function Navbar() {
   const { address, isConnected, chain } = useAccount();
@@ -17,8 +28,9 @@ export function Navbar() {
   const isWrongNetwork = isConnected && chain?.id !== BOTCHAIN_CHAIN_ID;
 
   const handleConnect = () => {
-    // Find injected or metaMask connector
-    const connector = connectors.find((c) => c.name.toLowerCase().includes("metamask")) || connectors[0];
+    const connector =
+      connectors.find((c) => c.name.toLowerCase().includes("metamask")) ||
+      connectors[0];
     if (connector) {
       connect({ connector });
     }
@@ -29,7 +41,7 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-purple-dark p-0.5 shadow-lg shadow-brand-purple/20 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-purple to-brand-green p-0.5 shadow-lg shadow-brand-purple/20 group-hover:scale-105 transition-transform">
             <div className="w-full h-full bg-charcoal-900 rounded-[10px] flex items-center justify-center">
               <Layers className="w-5 h-5 text-brand-purple-light" />
             </div>
@@ -39,12 +51,12 @@ export function Navbar() {
               <span className="font-bold text-lg text-gray-100 tracking-tight group-hover:text-brand-purple-light transition-colors">
                 QueueTab
               </span>
-              <span className="px-1.5 py-0.5 text-[10px] font-medium tracking-wide uppercase rounded bg-charcoal-700 text-gray-400 border border-charcoal-600">
-                {BOTCHAIN_CHAIN_ID === 677 ? "Mainnet" : "Testnet"}
+              <span className="px-1.5 py-0.5 text-[10px] font-semibold tracking-wide uppercase rounded bg-charcoal-700 text-brand-green border border-charcoal-600">
+                Mainnet
               </span>
             </div>
             <p className="text-[11px] text-gray-400 hidden sm:block">
-              On-Chain Group Expense Tracker
+              On-Chain Group Expense Tracker on BOT Chain
             </p>
           </div>
         </Link>
@@ -59,17 +71,23 @@ export function Navbar() {
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-medium hover:bg-amber-500/20 transition-colors"
             >
               <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-              <span>{isSwitching ? "Switching..." : "Switch to Botchain"}</span>
+              <span>{isSwitching ? "Switching..." : "Switch to BOT Chain"}</span>
             </button>
           )}
 
-          {/* Network Indicator (if on correct network) */}
-          {isConnected && !isWrongNetwork && (
-            <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-charcoal-800/80 border border-charcoal-700/80 text-xs text-gray-300">
-              <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
-              <span>{BOTCHAIN_NETWORK_NAME} ({BOTCHAIN_CHAIN_ID})</span>
-            </div>
-          )}
+          {/* Mainnet Explorer Link & Indicator */}
+          <a
+            href={BOTCHAIN_EXPLORER_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open BOT Chain Mainnet Explorer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-charcoal-800/80 hover:bg-charcoal-700/80 border border-charcoal-700/80 text-xs text-gray-300 hover:text-white transition-colors"
+          >
+            <span className="w-2 h-2 rounded-full bg-brand-green animate-pulse" />
+            <span className="hidden sm:inline">BOT Chain Explorer</span>
+            <span className="sm:hidden">Explorer</span>
+            <ExternalLink className="w-3 h-3 text-gray-400" />
+          </a>
 
           {/* Wallet Button */}
           {isConnected && address ? (
@@ -85,7 +103,7 @@ export function Navbar() {
 
               {dropdownOpen && (
                 <div
-                  className="absolute right-0 mt-2 w-52 rounded-xl bg-charcoal-850 border border-charcoal-700 shadow-xl py-1.5 z-50 text-sm animate-in fade-in slide-in-from-top-2"
+                  className="absolute right-0 mt-2 w-56 rounded-xl bg-charcoal-850 border border-charcoal-700 shadow-xl py-1.5 z-50 text-sm animate-in fade-in slide-in-from-top-2"
                   onClick={() => setDropdownOpen(false)}
                 >
                   <div className="px-3.5 py-2 border-b border-charcoal-700/70">
@@ -96,9 +114,18 @@ export function Navbar() {
                       {address}
                     </p>
                   </div>
+                  <a
+                    href={`${BOTCHAIN_EXPLORER_URL}/address/${address}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-between px-3.5 py-2 text-gray-300 hover:bg-charcoal-700/50 hover:text-white transition-colors text-xs"
+                  >
+                    <span>View on BOT Explorer</span>
+                    <ExternalLink className="w-3 h-3 text-gray-500" />
+                  </a>
                   <button
                     onClick={() => disconnect()}
-                    className="w-full flex items-center gap-2.5 px-3.5 py-2 text-rose-400 hover:bg-charcoal-700/50 transition-colors text-xs font-medium"
+                    className="w-full flex items-center gap-2.5 px-3.5 py-2 text-rose-400 hover:bg-charcoal-700/50 transition-colors text-xs font-medium border-t border-charcoal-700/70"
                   >
                     <LogOut className="w-3.5 h-3.5" />
                     <span>Disconnect Wallet</span>
@@ -121,4 +148,3 @@ export function Navbar() {
     </header>
   );
 }
-

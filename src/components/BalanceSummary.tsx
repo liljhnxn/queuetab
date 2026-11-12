@@ -1,5 +1,5 @@
 import React from "react";
-import { formatBohr, shortenAddress } from "@/utils/format";
+import { formatBot, shortenAddress } from "@/utils/format";
 import { ArrowUpRight, ArrowDownLeft, CheckCircle2, User } from "lucide-react";
 import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
@@ -111,12 +111,12 @@ export function BalanceSummary({
 
                   {/* Total Paid */}
                   <td className="px-6 py-4 font-mono font-medium text-gray-200">
-                    {formatBohr(item.paid)} {BOTCHAIN_CURRENCY_SYMBOL}
+                    {formatBot(item.paid)} {BOTCHAIN_CURRENCY_SYMBOL}
                   </td>
 
                   {/* Share Owed */}
                   <td className="px-6 py-4 font-mono font-medium text-gray-200">
-                    {formatBohr(item.owed)} {BOTCHAIN_CURRENCY_SYMBOL}
+                    {formatBot(item.owed)} {BOTCHAIN_CURRENCY_SYMBOL}
                   </td>
 
                   {/* Net Balance */}
@@ -124,13 +124,13 @@ export function BalanceSummary({
                     {isPositive && (
                       <span className="text-brand-green flex items-center gap-1">
                         <ArrowUpRight className="w-3.5 h-3.5" />
-                        +{formatBohr(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
+                        +{formatBot(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
                       </span>
                     )}
                     {isNegative && (
                       <span className="text-rose-400 flex items-center gap-1">
                         <ArrowDownLeft className="w-3.5 h-3.5" />
-                        -{formatBohr(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
+                        -{formatBot(absNet)} {BOTCHAIN_CURRENCY_SYMBOL}
                       </span>
                     )}
                     {isZero && (
@@ -144,12 +144,12 @@ export function BalanceSummary({
                   <td className="px-6 py-4 text-right">
                     {isPositive && (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-brand-green/10 text-brand-green-light border border-brand-green/30">
-                        Paid More (+{formatBohr(absNet)})
+                        Paid More (+{formatBot(absNet)})
                       </span>
                     )}
                     {isNegative && (
                       <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-medium bg-rose-500/10 text-rose-400 border border-rose-500/30">
-                        Owes Money ({formatBohr(absNet)})
+                        Owes Money ({formatBot(absNet)})
                       </span>
                     )}
                     {isZero && (

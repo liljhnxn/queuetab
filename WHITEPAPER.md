@@ -1,8 +1,10 @@
 # QueueTab Whitepaper
 **A Non-Custodial, Decentralized Group Expense Tracking Protocol on Botchain**
 
-* **Network:** Botchain Mainnet (Chain ID: `677`, Currency: `BOT`)
+* **Network:** BOT Chain Mainnet (Chain ID: `677`, Currency: `BOT`)
 * **RPC URL:** `https://rpc.botchain.ai`
+* **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
 * **Verified Contract:** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
 * **GitHub Repository:** [https://github.com/liljhnxn/queuetab](https://github.com/liljhnxn/queuetab)
 
@@ -11,7 +13,7 @@
 ## 1. Abstract
 Managing shared expenses among groups—such as roommates, travel cohorts, and decentralized autonomous organization (DAO) project teams—has historically relied on centralized Web2 applications. These legacy systems are fraught with privacy vulnerabilities, closed databases, intrusive advertisements, and predatory monetization schemes.
 
-QueueTab introduces a trustless, transparent, and non-custodial shared expense tracking protocol implemented as a Solidity smart contract deployed on the Botchain Testnet. Unlike custodial solutions that introduce regulatory friction and counterparty risks by holding user funds in escrow, QueueTab operates strictly as an immutable accounting ledger. It automates equal expense distribution, safely accounts for division remainders at the integer level, and computes net liabilities on-chain without ever custodying user tokens.
+QueueTab introduces a trustless, transparent, and non-custodial shared expense tracking protocol implemented as a Solidity smart contract deployed on the BOT Chain Mainnet. Unlike custodial solutions that introduce regulatory friction and counterparty risks by holding user funds in escrow, QueueTab operates strictly as an immutable accounting ledger. It automates equal expense distribution, safely accounts for division remainders at the integer level, and computes net liabilities on-chain without ever custodying user tokens.
 
 ---
 
@@ -33,7 +35,7 @@ Standard financial software often relies on floating-point arithmetic or imprope
 
 ## 3. The QueueTab Solution
 QueueTab solves these challenges through strict separation of concerns:
-* **Immutable Bookkeeping:** All groups, memberships, expense logs, and split records are recorded directly on Botchain Testnet.
+* **Immutable Bookkeeping:** All groups, memberships, expense logs, and split records are recorded directly on BOT Chain Mainnet.
 * **Strict Non-Custodial Nature:** The contract holds zero token balances and contains no payment transfer logic.
 * **Integer-Safe Arithmetic:** Guarantees zero precision loss at the wei level.
 * **Transparent Net Balance Calculations:** Dynamically calculates exact liabilities:
@@ -89,7 +91,7 @@ The core contract [`QueueTab.sol`](file:///contracts/QueueTab.sol) is compiled w
 ---
 
 ## 7. Roadmap
-* **Phase 1 (Complete):** Core contract development, Botchain Testnet deployment, contract verification, responsive Next.js 14 frontend.
+* **Phase 1 (Complete):** Core contract development, BOT Chain Mainnet deployment, contract verification, responsive Next.js 14 frontend.
 * **Phase 2:** Expense category tagging (Dining, Housing, Travel, Operations) and CSV export.
 * **Phase 3:** Optional wallet-to-wallet P2P settlement links and multi-currency conversion views.
 

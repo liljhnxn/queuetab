@@ -21,11 +21,11 @@ async function main() {
   const network = await ethers.provider.getNetwork();
   const chainId = network.chainId.toString();
 
-  const isMainnet = chainId === "677";
-  const networkName = isMainnet ? "Botchain Mainnet" : "Botchain Testnet";
-  const currencySymbol = isMainnet ? "BOT" : "BOHR";
-  const rpcUrl = isMainnet ? "https://rpc.botchain.ai" : "https://rpc.bohr.life";
-  const explorerUrl = isMainnet ? "https://scan.botchain.ai" : "https://scan.bohr.life";
+  const isMainnet = chainId === "677" || chainId === "31337";
+  const networkName = "Botchain Mainnet";
+  const currencySymbol = "BOT";
+  const rpcUrl = "https://rpc.botchain.ai";
+  const explorerUrl = "https://scan.botchain.ai";
 
   console.log("==================================================");
   console.log(`Deploying QueueTab smart contract to ${networkName} (Chain ID: ${chainId})...`);

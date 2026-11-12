@@ -1,6 +1,10 @@
 # QueueTab 🧾⚡
 
-**QueueTab** is an on-chain group expense tracking application built on the **Botchain Testnet**. It helps friends, roommates, and small travel groups record shared expenses, manage group members, and automatically calculate fair individual liabilities and net balances directly on the blockchain.
+**QueueTab** is an on-chain group expense tracking application built on the **BOT Chain Mainnet**. It helps friends, roommates, and small travel groups record shared expenses, manage group members, and automatically calculate fair individual liabilities and net balances directly on the blockchain.
+
+* **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
+* **Verified Mainnet Contract:** [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code)
 
 > [!NOTE]
 > **Strictly an Accounting Ledger:** QueueTab records shared expenses and mathematically divides liabilities among members on-chain. It **does NOT** transfer cryptocurrency, hold funds, request payment approvals, or process transactions through payment gateways.
@@ -11,8 +15,9 @@
 
 ### 🦊 Wallet Connection & Network Management
 - One-click **MetaMask** and injected wallet integration via **wagmi v2** and **viem**.
-- Real-time network detection with a 1-click **"Switch to Botchain"** prompt if connected to an unsupported chain.
+- Real-time network detection with a 1-click **"Switch to BOT Chain"** prompt if connected to an unsupported chain.
 - Shortened wallet address formatting (`0x12...34`) with instant clipboard copying.
+- Direct links to view addresses and transactions on the official [BOT Chain Explorer](https://scan.botchain.ai).
 - Graceful wallet disconnection and session handling.
 
 ### 👥 Group Creation & Administration
@@ -22,15 +27,15 @@
 - Admin-only member invitation with address validation (prevents duplicate members, invalid addresses, and the zero address).
 
 ### 📝 Expense Recording & Integer-Safe Arithmetic
-- Any registered member can record shared expenses (in BOHR).
+- Any registered member can record shared expenses (in BOT).
 - Real-time equal split calculation preview: `Share per member = Amount / MemberCount`.
 - **Rounding Handling**: All calculations use integer-safe arithmetic. When dividing `amount` by `N` members, each member's liability increments by `amount / N`. Any indivisible wei remainder (`amount % N`) remains tracked with the expense record to prevent precision loss.
 - Immutable activity log storing the payer's address, expense title, description, timestamp, and split per member.
 
 ### 📊 Transparent Balance Summary
 - Automatically calculates:
-  - **Total Paid:** Total BOHR contributed by each member toward group expenses.
-  - **Share Owed:** Total BOHR share of all recorded group expenses.
+  - **Total Paid:** Total BOT contributed by each member toward group expenses.
+  - **Share Owed:** Total BOT share of all recorded group expenses.
   - **Net Balance:** Calculated as `Net Balance = Amount Paid − Share Owed`.
 - Visual balance interpretation:
   - 🟢 **Positive (+):** Member has paid more than their share (owed credit).
@@ -52,15 +57,18 @@
 
 ---
 
-## 🌐 Blockchain Configuration (Botchain Testnet)
+## 🌐 Blockchain Configuration (BOT Chain Mainnet)
 
 | Parameter | Value |
 |---|---|
-| **Network Name** | Botchain Testnet |
-| **Chain ID** | `968` |
-| **RPC URL** | `https://rpc.bohr.life` |
-| **Block Explorer** | [https://scan.bohr.life](https://scan.bohr.life) |
-| **Native Currency** | BOHR (18 decimals) |
+| **Network Name** | BOT Chain Mainnet |
+| **Chain ID** | `677` |
+| **RPC URL** | `https://rpc.botchain.ai` |
+| **Block Explorer** | [https://scan.botchain.ai](https://scan.botchain.ai) |
+| **Official Website** | [https://botchain.ai](https://botchain.ai) |
+| **Native Currency** | BOT (18 decimals) |
+| **Total Supply** | 150 Million BOT |
+| **Verified Contract** | [`0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB`](https://scan.botchain.ai/address/0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB#code) |
 
 ---
 
@@ -80,29 +88,29 @@ npm install
 
 ### 2. Environment Setup
 
-Copy `.env.example` to `.env`:
+Copy `.env.example` to `.env.local`:
 
 ```bash
-cp .env.example .env
+cp .env.example .env.local
 ```
 
 Fill in your configuration:
 
 ```env
-# Botchain Testnet RPC
-BOTCHAIN_RPC_URL="https://rpc.bohr.life"
+# Botchain Mainnet RPC
+BOTCHAIN_RPC_URL="https://rpc.botchain.ai"
 
 # Deployer Private Key (For contract deployment)
 PRIVATE_KEY="your_private_key_without_0x"
 
-# Deployed Smart Contract Address (Updated after deployment)
-NEXT_PUBLIC_CONTRACT_ADDRESS="0x..."
+# Deployed Smart Contract Address (Botchain Mainnet)
+NEXT_PUBLIC_CONTRACT_ADDRESS="0x9CE13d9FaCe9BB83B5EBeE3993b741ce378C7EdB"
 
 # Network Configuration
-NEXT_PUBLIC_CHAIN_ID="968"
-NEXT_PUBLIC_RPC_URL="https://rpc.bohr.life"
-NEXT_PUBLIC_BLOCK_EXPLORER_URL="https://scan.bohr.life"
-NEXT_PUBLIC_CURRENCY_SYMBOL="BOHR"
+NEXT_PUBLIC_CHAIN_ID="677"
+NEXT_PUBLIC_RPC_URL="https://rpc.botchain.ai"
+NEXT_PUBLIC_BLOCK_EXPLORER_URL="https://scan.botchain.ai"
+NEXT_PUBLIC_CURRENCY_SYMBOL="BOT"
 ```
 
 ---
@@ -156,9 +164,9 @@ Expected output:
 
 ---
 
-## 🚢 Deploying to Botchain Testnet
+## 🚢 Deploying to BOT Chain Mainnet
 
-1. Ensure your deployer account has testnet BOHR tokens.
+1. Ensure your deployer account has BOT tokens for gas.
 2. Run the deployment script:
 
 ```bash
@@ -166,7 +174,7 @@ npm run deploy:botchain
 ```
 
 3. The script will output the deployed contract address and automatically save the deployment information to `src/config/contractAddress.json`.
-4. Copy the contract address into your `.env` as `NEXT_PUBLIC_CONTRACT_ADDRESS`.
+4. The contract address is configured in `src/config/contract.ts` and `.env.local` as `NEXT_PUBLIC_CONTRACT_ADDRESS`.
 
 ---
 
@@ -214,7 +222,7 @@ QueueTab/
 │   ├── config/
 │   │   ├── abi.ts               # Complete typed QueueTab ABI
 │   │   ├── contract.ts          # Contract address & wagmi contract config
-│   │   ├── network.ts           # Botchain Testnet chain definition
+│   │   ├── network.ts           # BOT Chain Mainnet chain definition
 │   │   └── wagmi.ts             # Wagmi client configuration
 │   ├── providers/
 │   │   └── Web3Provider.tsx     # Wagmi & React Query provider wrapper

@@ -11,7 +11,9 @@
 * **Header:** QueueTab
 * **Sub-header:** On-Chain Group Expense Tracking for the Web3 Era
 * **Tagline:** Track shared expenses with friends, roommates, and teams with zero custody risk.
-* **Network:** Powered by Botchain Testnet
+* **Network:** Powered by BOT Chain Mainnet
+* **BOT Chain Website:** [https://botchain.ai](https://botchain.ai)
+* **BOT Chain Explorer:** [https://scan.botchain.ai](https://scan.botchain.ai)
 
 ---
 
@@ -36,9 +38,9 @@
 ---
 
 ## Slide 4: Key Features & User Experience
-* **MetaMask & Web3 Native:** 1-click connect with automatic network switching to Botchain Testnet.
+* **MetaMask & Web3 Native:** 1-click connect with automatic network switching to BOT Chain Mainnet.
 * **Group Management:** Admins create groups and invite members via Ethereum-compatible wallet addresses.
-* **Real-Time Split Preview:** Live preview shows cost-per-member (e.g. `~1.50 BOHR / member`) before signing on-chain.
+* **Real-Time Split Preview:** Live preview shows cost-per-member (e.g. `~1.50 BOT / member`) before signing on-chain.
 * **Interactive Balance Table:** Color-coded badges instantly identify Creditors (🟢), Debtors (🔴), and Settled (⚪) members.
 
 ---
@@ -75,7 +77,7 @@
 ---
 
 ## Slide 9: Roadmap
-* **Milestone 1 (Complete):** Core smart contract, test suite, Botchain Testnet deployment, and verified explorer integration.
+* **Milestone 1 (Complete):** Core smart contract, test suite, Botchain Mainnet deployment, and verified explorer integration.
 * **Milestone 2:** Expense category filters, receipt file attachments (IPFS), and CSV ledger export.
 * **Milestone 3:** Native peer-to-peer 1-click wallet transfer links and ENS/BNS domain name resolution.
 

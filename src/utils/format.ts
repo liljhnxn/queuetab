@@ -6,7 +6,7 @@ export function shortenAddress(address?: string, chars = 4): string {
   return `${address.slice(0, chars + 2)}...${address.slice(-chars)}`;
 }
 
-export function formatBohr(amountWei?: bigint | string | number): string {
+export function formatBot(amountWei?: bigint | string | number): string {
   if (amountWei === undefined || amountWei === null) return "0.00";
   try {
     const val = typeof amountWei === "bigint" ? amountWei : BigInt(amountWei.toString());
@@ -19,7 +19,7 @@ export function formatBohr(amountWei?: bigint | string | number): string {
   }
 }
 
-export function parseBohr(amountStr: string): bigint {
+export function parseBot(amountStr: string): bigint {
   try {
     const trimmed = amountStr.trim();
     if (!trimmed || isNaN(Number(trimmed)) || Number(trimmed) <= 0) {
@@ -30,6 +30,8 @@ export function parseBohr(amountStr: string): bigint {
     return 0n;
   }
 }
+
+
 
 export function formatDateTime(timestamp?: bigint | number): string {
   if (!timestamp) return "Just now";

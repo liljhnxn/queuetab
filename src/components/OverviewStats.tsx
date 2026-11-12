@@ -1,6 +1,6 @@
 import React from "react";
 import { Users, ReceiptText, Coins, Layers } from "lucide-react";
-import { formatBohr } from "@/utils/format";
+import { formatBot } from "@/utils/format";
 import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
 interface OverviewStatsProps {
@@ -33,7 +33,7 @@ export function OverviewStats({
     },
     {
       title: "Total Group Spending",
-      value: `${formatBohr(totalSpendingWei)} ${BOTCHAIN_CURRENCY_SYMBOL}`,
+      value: `${formatBot(totalSpendingWei)} ${BOTCHAIN_CURRENCY_SYMBOL}`,
       label: "Combined tracked value",
       icon: Coins,
       color: "green",

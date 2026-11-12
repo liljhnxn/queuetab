@@ -212,7 +212,7 @@ export default function HomePage() {
       {(isGroupCountLoading || isGroupsLoading) && (
         <div className="p-16 flex flex-col items-center justify-center text-gray-400">
           <Loader2 className="w-8 h-8 animate-spin text-brand-purple mb-3" />
-          <p className="text-sm font-medium">Fetching on-chain groups from Botchain...</p>
+          <p className="text-sm font-medium">Fetching on-chain groups from BOT Chain...</p>
         </div>
       )}
 

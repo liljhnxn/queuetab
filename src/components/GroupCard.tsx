@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { Users, ReceiptText, ChevronRight, Shield } from "lucide-react";
-import { formatBohr, formatDateTime } from "@/utils/format";
+import { formatBot, formatDateTime } from "@/utils/format";
 import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 
 interface GroupCardProps {
@@ -64,7 +64,7 @@ export function GroupCard({
         <div>
           <span className="text-[11px] text-gray-400 block mb-0.5">Total Spent</span>
           <span className="font-semibold text-gray-200 font-mono">
-            {formatBohr(totalSpending)} {BOTCHAIN_CURRENCY_SYMBOL}
+            {formatBot(totalSpending)} {BOTCHAIN_CURRENCY_SYMBOL}
           </span>
         </div>
         <div>

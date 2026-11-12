@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useAccount, useReadContract } from "wagmi";
 import { QUEUETAB_ABI } from "@/config/abi";
 import { QUEUETAB_CONTRACT_ADDRESS } from "@/config/contract";
-import { formatBohr, formatDateTime, shortenAddress } from "@/utils/format";
+import { formatBot, formatDateTime, shortenAddress } from "@/utils/format";
 import { BOTCHAIN_CURRENCY_SYMBOL } from "@/config/network";
 import { BalanceSummary } from "@/components/BalanceSummary";
 import { ExpenseList, ExpenseRecord } from "@/components/ExpenseList";
@@ -195,7 +195,7 @@ export default function GroupDetailsPage({
     return (
       <div className="py-24 flex flex-col items-center justify-center text-gray-400">
         <Loader2 className="w-8 h-8 animate-spin text-brand-purple mb-3" />
-        <p className="text-sm font-medium">Loading group details from Botchain...</p>
+        <p className="text-sm font-medium">Loading group details from BOT Chain...</p>
       </div>
     );
   }
@@ -312,7 +312,7 @@ export default function GroupDetailsPage({
             </div>
           </div>
           <div className="text-2xl font-bold font-mono text-gray-100">
-            {formatBohr(group.totalSpending)} {BOTCHAIN_CURRENCY_SYMBOL}
+            {formatBot(group.totalSpending)} {BOTCHAIN_CURRENCY_SYMBOL}
           </div>
           <p className="text-[11px] text-gray-400 mt-1">Sum of all recorded expenses</p>
         </div>
@@ -340,7 +340,7 @@ export default function GroupDetailsPage({
           <div className="text-2xl font-bold font-mono text-gray-100">
             {expenses.length.toString()}
           </div>
-          <p className="text-[11px] text-gray-400 mt-1">Logged on Botchain Testnet</p>
+          <p className="text-[11px] text-gray-400 mt-1">Logged on BOT Chain Mainnet</p>
         </div>
       </div>
 

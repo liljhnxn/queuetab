@@ -114,7 +114,7 @@ export function CreateGroupModal({
 
           {isSuccess && (
             <div className="p-3 rounded-xl bg-brand-green/10 border border-brand-green/30 text-brand-green-light text-xs font-medium text-center">
-              ✓ Group created successfully on Botchain!
+              ✓ Group created successfully on BOT Chain Mainnet!
             </div>
           )}
 
